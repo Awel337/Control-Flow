@@ -60,26 +60,27 @@ console.log("Radius of the new garden:", newRadius, "meters");
 //Part 3: Errors In Judgement
 
 try {
-    
-
-    // Calculate the total area required
-    let plantSpaceNeeded = plantSpaceNeeded * plantSpace;
+    let experimentalPlants = 100;
+    // 2^10 power is 1024
+    let afterTenWeeks = experimentalPlants * 1024;
   
-    // Check if the area exceeds the garden's capacity
-    if (plantSpaceNeeded > area) {
-      throw new Error(
-        "The garden is too small! Required area: " +
-        plantSpaceNeeded +
-          " square meters, but available area is only " +
-          area +
-          " square meters."
-      );
+    let plantSpace = 1; // Assuming 1 square meter per plant (you can adjust this)
+    let availableSpace = 5000; // Total available space in square meters (you can adjust this)
+  
+    let plantSpaceNeeded = afterTenWeeks * plantSpace;
+  
+    // Check if the required space exceeds available space
+    if (plantSpaceNeeded > availableSpace) {
+      throw new Error("Not enough space for the plants after 10 weeks!");
     }
   
-    console.log("Plants after 10 weeks:", plantSpaceNeeded);
+    // Calculate the radius of the garden
+    let newRadius = Math.sqrt(plantSpaceNeeded / 3.1415);
+  
+    console.log("Plants after 10 weeks:", afterTenWeeks);
     console.log("Total area required:", plantSpaceNeeded, "square meters");
-    console.log("Garden capacity is sufficient.");
+    console.log("Radius of the new garden:", newRadius, "meters");
   } catch (error) {
     console.error("Error:", error.message);
   }
-   
+  
