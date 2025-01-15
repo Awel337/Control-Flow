@@ -61,20 +61,20 @@ console.log("Radius of the new garden:", newRadius, "meters");
 
 try {
     let experimentalPlants = 100;
-    // 2^10 power is 1024
+    
     let afterTenWeeks = experimentalPlants * 1024;
   
-    let plantSpace = 1; // Assuming 1 square meter per plant (you can adjust this)
-    let availableSpace = 5000; // Total available space in square meters (you can adjust this)
+    let plantSpace = 1; 
+    let availableSpace = 5000; 
   
     let plantSpaceNeeded = afterTenWeeks * plantSpace;
   
-    // Check if the required space exceeds available space
+    
     if (plantSpaceNeeded > availableSpace) {
       throw new Error("Not enough space for the plants after 10 weeks!");
     }
   
-    // Calculate the radius of the garden
+    
     let newRadius = Math.sqrt(plantSpaceNeeded / 3.1415);
   
     console.log("Plants after 10 weeks:", afterTenWeeks);
